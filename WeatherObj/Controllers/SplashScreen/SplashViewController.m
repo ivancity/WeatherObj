@@ -34,7 +34,10 @@
 }
 
 - (void)displayError:(NSString *)message {
-    
+    //self.view.window.rootViewController //Maybe
+    //better Maybe
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    UIViewController *controller = window.rootViewController;
 }
 
 @end
