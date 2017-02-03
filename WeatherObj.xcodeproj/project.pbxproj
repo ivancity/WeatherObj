@@ -14,6 +14,9 @@
 		1972351F1E43197300393D1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1972351E1E43197300393D1D /* Assets.xcassets */; };
 		197235221E43197300393D1D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 197235201E43197300393D1D /* LaunchScreen.storyboard */; };
 		197235311E43859A00393D1D /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 197235301E43859A00393D1D /* Podfile */; };
+		197235351E44828200393D1D /* AppCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 197235341E44828200393D1D /* AppCoordinator.m */; };
+		197235381E44937C00393D1D /* SplashCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 197235371E44937C00393D1D /* SplashCoordinator.m */; };
+		1972353B1E449A5B00393D1D /* SplashViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1972353A1E449A5B00393D1D /* SplashViewModel.m */; };
 		53D3EE7697BC8EEE42825145 /* libPods-WeatherObj.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A89E0F9715B52DB84AE3450 /* libPods-WeatherObj.a */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +32,13 @@
 		197235211E43197300393D1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		197235231E43197300393D1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		197235301E43859A00393D1D /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		197235321E43933400393D1D /* Coordinator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Coordinator.h; sourceTree = "<group>"; };
+		197235331E4475E200393D1D /* AppCoordinator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppCoordinator.h; sourceTree = "<group>"; };
+		197235341E44828200393D1D /* AppCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppCoordinator.m; sourceTree = "<group>"; };
+		197235361E44911C00393D1D /* SplashCoordinator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SplashCoordinator.h; path = Controllers/SplashScreen/SplashCoordinator.h; sourceTree = "<group>"; };
+		197235371E44937C00393D1D /* SplashCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SplashCoordinator.m; path = Controllers/SplashScreen/SplashCoordinator.m; sourceTree = "<group>"; };
+		197235391E4496C400393D1D /* SplashViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SplashViewModel.h; path = Controllers/SplashScreen/SplashViewModel.h; sourceTree = "<group>"; };
+		1972353A1E449A5B00393D1D /* SplashViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SplashViewModel.m; path = Controllers/SplashScreen/SplashViewModel.m; sourceTree = "<group>"; };
 		2A89E0F9715B52DB84AE3450 /* libPods-WeatherObj.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WeatherObj.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		59010F7A99B5009A07B1B605 /* Pods-WeatherObj.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherObj.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherObj/Pods-WeatherObj.debug.xcconfig"; sourceTree = "<group>"; };
 		E85AE13452D75E9FA34A35F4 /* Pods-WeatherObj.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherObj.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherObj/Pods-WeatherObj.release.xcconfig"; sourceTree = "<group>"; };
@@ -81,6 +91,9 @@
 				197235201E43197300393D1D /* LaunchScreen.storyboard */,
 				197235231E43197300393D1D /* Info.plist */,
 				197235121E43197300393D1D /* Supporting Files */,
+				197235321E43933400393D1D /* Coordinator.h */,
+				197235331E4475E200393D1D /* AppCoordinator.h */,
+				197235341E44828200393D1D /* AppCoordinator.m */,
 			);
 			path = WeatherObj;
 			sourceTree = "<group>";
@@ -141,6 +154,10 @@
 		1972352F1E43845E00393D1D /* SplashScreen */ = {
 			isa = PBXGroup;
 			children = (
+				197235361E44911C00393D1D /* SplashCoordinator.h */,
+				197235371E44937C00393D1D /* SplashCoordinator.m */,
+				197235391E4496C400393D1D /* SplashViewModel.h */,
+				1972353A1E449A5B00393D1D /* SplashViewModel.m */,
 			);
 			name = SplashScreen;
 			sourceTree = "<group>";
@@ -261,7 +278,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run \'pod install\' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		B35E35D482B0DB4FE40BDC0C /* [CP] Copy Pods Resources */ = {
@@ -286,6 +303,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				197235351E44828200393D1D /* AppCoordinator.m in Sources */,
+				1972353B1E449A5B00393D1D /* SplashViewModel.m in Sources */,
+				197235381E44937C00393D1D /* SplashCoordinator.m in Sources */,
 				1972351A1E43197300393D1D /* ViewController.m in Sources */,
 				197235171E43197300393D1D /* AppDelegate.m in Sources */,
 				197235141E43197300393D1D /* main.m in Sources */,
@@ -447,6 +467,7 @@
 				197235281E43197300393D1D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
