@@ -7,13 +7,14 @@
 //
 #import "Coordinator.h"
 #import "SplashViewModel.h"
+#import "SplashViewController.h"
 
 @protocol SplashCoordinatorCoordinatorDelegate <NSObject>
 - (void)splashCoordinatorFinished;
 @end
 
-@interface SplashCoordinator : NSObject<Coordinator>
+@interface SplashCoordinator : NSObject<Coordinator, SplashViewModelCoordinatorDelegate>
 @property (nonatomic, weak) id<SplashCoordinatorCoordinatorDelegate> coordinatorDelegate;
 @property (nonatomic, strong) SplashViewModel* viewModel;
-
+@property (nonatomic, strong) SplashViewController* splashVc;
 @end

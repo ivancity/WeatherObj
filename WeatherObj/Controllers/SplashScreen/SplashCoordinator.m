@@ -8,22 +8,25 @@
 
 #import <Foundation/Foundation.h>
 #import "SplashCoordinator.h"
+#import "SplashViewController.h"
 
 @implementation SplashCoordinator
 
 - (id)init {
     self = [super init];
     if (self) {
-        //init SplashViewModel() and SplashViewController(viewModel)
         self.viewModel = [[SplashViewModel alloc] init];
-        
-        
-        //set viewModel.coordinatorDelegate = self
+        self.splashVc = [[SplashViewController alloc] initWithViewModel: self.viewModel];
+        self.viewModel.coordinatorDelegate = self;
     }
     return self;
 }
 
 - (UIViewController *)startController {
+    return self.splashVc;
+}
+
+- (void)fetchCompleted {
     
 }
 
