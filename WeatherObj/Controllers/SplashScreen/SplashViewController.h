@@ -9,6 +9,10 @@
 #import "SplashViewModel.h"
 
 @interface SplashViewController : UIViewController<SplashViewModelViewDelegate>
+
 @property (strong, nonatomic) SplashViewModel* viewModel;
+@property (strong, nonatomic) UIImageView* imageView;
+
 - (id)initWithViewModel: (SplashViewModel *) viewModel_;
+
 @end

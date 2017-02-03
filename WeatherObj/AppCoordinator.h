@@ -10,4 +10,6 @@
 @interface AppCoordinator : NSObject<Coordinator, SplashCoordinatorCoordinatorDelegate>
 @property (strong, nonatomic, nullable) UIWindow *const window;
 @property (nonatomic, nullable) id<Coordinator> currentCoordinator;
+
+- (nullable id)initWithWindow:(nullable UIWindow *)window_;
 @end

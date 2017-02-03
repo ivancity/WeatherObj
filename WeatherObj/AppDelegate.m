@@ -14,9 +14,16 @@
 
 @implementation AppDelegate
 
+-(id)init {
+    self.window = [[UIWindow alloc] init];
+    self.appCoordinator = [[AppCoordinator alloc] initWithWindow:self.window];
+    return [super init];
+}
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    self.window.rootViewController = [self.appCoordinator startController];
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
