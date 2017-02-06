@@ -34,10 +34,16 @@
 }
 
 - (void)displayError:(NSString *)message {
-    //self.view.window.rootViewController //Maybe
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Opps"
+                                                                             message:@"Something went wrong"
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
+    UIViewController *viewController = self.view.window.rootViewController;
     //better Maybe
-    UIWindow *window = [UIApplication sharedApplication].keyWindow;
-    UIViewController *controller = window.rootViewController;
+    //UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    //UIViewController *controller = window.rootViewController;
+    [viewController presentViewController:alertController
+                                 animated:YES
+                               completion:nil];
 }
 
 @end

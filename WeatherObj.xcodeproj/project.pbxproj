@@ -17,6 +17,7 @@
 		197235381E44937C00393D1D /* SplashCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 197235371E44937C00393D1D /* SplashCoordinator.m */; };
 		1972353B1E449A5B00393D1D /* SplashViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1972353A1E449A5B00393D1D /* SplashViewModel.m */; };
 		1972353E1E44B5F200393D1D /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1972353D1E44B5F200393D1D /* SplashViewController.m */; };
+		197235401E48608400393D1D /* WeatherRssFeedService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1972353F1E48608400393D1D /* WeatherRssFeedService.m */; };
 		53D3EE7697BC8EEE42825145 /* libPods-WeatherObj.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A89E0F9715B52DB84AE3450 /* libPods-WeatherObj.a */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,13 @@
 		1972353A1E449A5B00393D1D /* SplashViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SplashViewModel.m; path = Controllers/SplashScreen/SplashViewModel.m; sourceTree = "<group>"; };
 		1972353C1E44A1D600393D1D /* SplashViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SplashViewController.h; path = Controllers/SplashScreen/SplashViewController.h; sourceTree = "<group>"; };
 		1972353D1E44B5F200393D1D /* SplashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SplashViewController.m; path = Controllers/SplashScreen/SplashViewController.m; sourceTree = "<group>"; };
+		1972353F1E48608400393D1D /* WeatherRssFeedService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WeatherRssFeedService.m; path = Services/WeatherRssFeedService.m; sourceTree = "<group>"; };
+		197235411E48684800393D1D /* WeatherRssFeedService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = WeatherRssFeedService.h; path = Services/WeatherRssFeedService.h; sourceTree = "<group>"; };
+		197235421E486B2100393D1D /* Forecast.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Forecast.h; path = Models/Forecast.h; sourceTree = "<group>"; };
+		197235431E486CEF00393D1D /* ForecastDate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ForecastDate.h; path = Models/ForecastDate.h; sourceTree = "<group>"; };
+		197235441E48765E00393D1D /* Forecasts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Forecasts.h; path = Models/Forecasts.h; sourceTree = "<group>"; };
+		197235451E48770E00393D1D /* Place.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Place.h; path = Models/Place.h; sourceTree = "<group>"; };
+		197235461E48783500393D1D /* Wind.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Wind.h; path = Models/Wind.h; sourceTree = "<group>"; };
 		2A89E0F9715B52DB84AE3450 /* libPods-WeatherObj.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WeatherObj.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		59010F7A99B5009A07B1B605 /* Pods-WeatherObj.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherObj.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherObj/Pods-WeatherObj.debug.xcconfig"; sourceTree = "<group>"; };
 		E85AE13452D75E9FA34A35F4 /* Pods-WeatherObj.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherObj.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherObj/Pods-WeatherObj.release.xcconfig"; sourceTree = "<group>"; };
@@ -117,6 +125,11 @@
 		1972352A1E4380D300393D1D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				197235421E486B2100393D1D /* Forecast.h */,
+				197235431E486CEF00393D1D /* ForecastDate.h */,
+				197235441E48765E00393D1D /* Forecasts.h */,
+				197235451E48770E00393D1D /* Place.h */,
+				197235461E48783500393D1D /* Wind.h */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -124,6 +137,8 @@
 		1972352B1E4380DB00393D1D /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				1972353F1E48608400393D1D /* WeatherRssFeedService.m */,
+				197235411E48684800393D1D /* WeatherRssFeedService.h */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -306,6 +321,7 @@
 				197235351E44828200393D1D /* AppCoordinator.m in Sources */,
 				1972353E1E44B5F200393D1D /* SplashViewController.m in Sources */,
 				1972353B1E449A5B00393D1D /* SplashViewModel.m in Sources */,
+				197235401E48608400393D1D /* WeatherRssFeedService.m in Sources */,
 				197235381E44937C00393D1D /* SplashCoordinator.m in Sources */,
 				197235171E43197300393D1D /* AppDelegate.m in Sources */,
 				197235141E43197300393D1D /* main.m in Sources */,
