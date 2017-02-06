@@ -6,6 +6,8 @@
 //  Copyright © 2017 MC_test. All rights reserved.
 //
 
+#import "Forecasts.h"
+
 @interface WeatherRssFeedService : NSObject
-+ (void)getWeatherDataWithCompletion: (void (^)())callbackCompletion;
++ (void)getWeatherDataWithCompletion: (void (^)(Forecasts*))callbackCompletion;
 @end

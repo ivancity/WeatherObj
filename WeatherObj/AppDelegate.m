@@ -14,7 +14,7 @@
 
 @implementation AppDelegate
 
--(id)init {
+-(instancetype)init {
     self.window = [[UIWindow alloc] init];
     self.appCoordinator = [[AppCoordinator alloc] initWithWindow:self.window];
     return [super init];

@@ -11,7 +11,7 @@
 #import "Masonry.h"
 @implementation SplashViewController
 
-- (id)initWithViewModel: (SplashViewModel *) viewModel_ {
+- (instancetype)initWithViewModel: (SplashViewModel *) viewModel_ {
     self = [super initWithNibName:nil bundle:nil];
     if (self) {
         self.viewModel = viewModel_;

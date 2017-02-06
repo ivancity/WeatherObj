@@ -13,6 +13,6 @@
 @property (strong, nonatomic) SplashViewModel* viewModel;
 @property (strong, nonatomic) UIImageView* imageView;
 
-- (id)initWithViewModel: (SplashViewModel *) viewModel_;
+- (instancetype)initWithViewModel: (SplashViewModel *) viewModel_;
 
 @end

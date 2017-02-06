@@ -12,7 +12,7 @@
 
 @implementation SplashCoordinator
 
-- (id)init {
+- (instancetype)init {
     self = [super init];
     if (self) {
         self.viewModel = [[SplashViewModel alloc] init];

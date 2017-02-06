@@ -10,7 +10,7 @@
 #import "SplashViewModel.h"
 @implementation SplashViewModel
 
-- (id)init {
+- (instancetype)init {
     self = [super init];
     if(self) {
         [self getWeatherData];
