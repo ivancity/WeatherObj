@@ -40,6 +40,7 @@ typedef NS_ENUM(NSInteger, XmlElements) {
 @property (nonatomic, strong) ForecastDate *forecastDate;
 @property (nonatomic, strong) Place *place;
 @property (nonatomic, strong) Wind *wind;
+@property (nonatomic) XmlElements currentElement;
 @property (nonatomic, strong) Forecasts *forecasts;
 @property (nonatomic, strong) NSString *tempString;
 

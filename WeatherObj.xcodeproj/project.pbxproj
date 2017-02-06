@@ -19,6 +19,11 @@
 		1972353E1E44B5F200393D1D /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1972353D1E44B5F200393D1D /* SplashViewController.m */; };
 		197235401E48608400393D1D /* WeatherRssFeedService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1972353F1E48608400393D1D /* WeatherRssFeedService.m */; };
 		197235491E48A17A00393D1D /* WeatherDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 197235481E48A17A00393D1D /* WeatherDataManager.m */; };
+		1972354B1E48BDC100393D1D /* Place.m in Sources */ = {isa = PBXBuildFile; fileRef = 1972354A1E48BDC100393D1D /* Place.m */; };
+		1972354D1E48BE0B00393D1D /* Forecast.m in Sources */ = {isa = PBXBuildFile; fileRef = 1972354C1E48BE0B00393D1D /* Forecast.m */; };
+		1972354F1E48BE5F00393D1D /* ForecastDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1972354E1E48BE5F00393D1D /* ForecastDate.m */; };
+		197235511E48BE8D00393D1D /* Wind.m in Sources */ = {isa = PBXBuildFile; fileRef = 197235501E48BE8D00393D1D /* Wind.m */; };
+		197235531E48BEC700393D1D /* Forecasts.m in Sources */ = {isa = PBXBuildFile; fileRef = 197235521E48BEC700393D1D /* Forecasts.m */; };
 		53D3EE7697BC8EEE42825145 /* libPods-WeatherObj.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A89E0F9715B52DB84AE3450 /* libPods-WeatherObj.a */; };
 /* End PBXBuildFile section */
 
@@ -31,7 +36,7 @@
 		1972351E1E43197300393D1D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		197235211E43197300393D1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		197235231E43197300393D1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		197235301E43859A00393D1D /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		197235301E43859A00393D1D /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		197235321E43933400393D1D /* Coordinator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Coordinator.h; sourceTree = "<group>"; };
 		197235331E4475E200393D1D /* AppCoordinator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppCoordinator.h; sourceTree = "<group>"; };
 		197235341E44828200393D1D /* AppCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppCoordinator.m; sourceTree = "<group>"; };
@@ -50,6 +55,11 @@
 		197235461E48783500393D1D /* Wind.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Wind.h; path = Models/Wind.h; sourceTree = "<group>"; };
 		197235471E4883FB00393D1D /* WeatherDataManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = WeatherDataManager.h; path = Utility/WeatherDataManager.h; sourceTree = "<group>"; };
 		197235481E48A17A00393D1D /* WeatherDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WeatherDataManager.m; path = Utility/WeatherDataManager.m; sourceTree = "<group>"; };
+		1972354A1E48BDC100393D1D /* Place.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Place.m; path = Models/Place.m; sourceTree = "<group>"; };
+		1972354C1E48BE0B00393D1D /* Forecast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Forecast.m; path = Models/Forecast.m; sourceTree = "<group>"; };
+		1972354E1E48BE5F00393D1D /* ForecastDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ForecastDate.m; path = Models/ForecastDate.m; sourceTree = "<group>"; };
+		197235501E48BE8D00393D1D /* Wind.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Wind.m; path = Models/Wind.m; sourceTree = "<group>"; };
+		197235521E48BEC700393D1D /* Forecasts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Forecasts.m; path = Models/Forecasts.m; sourceTree = "<group>"; };
 		2A89E0F9715B52DB84AE3450 /* libPods-WeatherObj.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WeatherObj.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		59010F7A99B5009A07B1B605 /* Pods-WeatherObj.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherObj.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherObj/Pods-WeatherObj.debug.xcconfig"; sourceTree = "<group>"; };
 		E85AE13452D75E9FA34A35F4 /* Pods-WeatherObj.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherObj.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherObj/Pods-WeatherObj.release.xcconfig"; sourceTree = "<group>"; };
@@ -133,6 +143,11 @@
 				197235441E48765E00393D1D /* Forecasts.h */,
 				197235451E48770E00393D1D /* Place.h */,
 				197235461E48783500393D1D /* Wind.h */,
+				1972354A1E48BDC100393D1D /* Place.m */,
+				1972354C1E48BE0B00393D1D /* Forecast.m */,
+				1972354E1E48BE5F00393D1D /* ForecastDate.m */,
+				197235501E48BE8D00393D1D /* Wind.m */,
+				197235521E48BEC700393D1D /* Forecasts.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -325,10 +340,15 @@
 			files = (
 				197235351E44828200393D1D /* AppCoordinator.m in Sources */,
 				1972353E1E44B5F200393D1D /* SplashViewController.m in Sources */,
+				1972354D1E48BE0B00393D1D /* Forecast.m in Sources */,
 				1972353B1E449A5B00393D1D /* SplashViewModel.m in Sources */,
 				197235401E48608400393D1D /* WeatherRssFeedService.m in Sources */,
 				197235491E48A17A00393D1D /* WeatherDataManager.m in Sources */,
 				197235381E44937C00393D1D /* SplashCoordinator.m in Sources */,
+				197235511E48BE8D00393D1D /* Wind.m in Sources */,
+				1972354B1E48BDC100393D1D /* Place.m in Sources */,
+				197235531E48BEC700393D1D /* Forecasts.m in Sources */,
+				1972354F1E48BE5F00393D1D /* ForecastDate.m in Sources */,
 				197235171E43197300393D1D /* AppDelegate.m in Sources */,
 				197235141E43197300393D1D /* main.m in Sources */,
 			);

@@ -63,13 +63,59 @@ NSString *const kWind = @"wind";
     
     XmlElements xmlElement = [self findXmlElement:elementName];
     switch (xmlElement) {
-        case forecasts:
+        case forecasts: {
             self.forecastsArray = [NSMutableArray new];
             self.forecasts = [[Forecasts alloc] init];
             break;
-        case forecast:
+        }
+        case forecast: {
+            self.forecast = [[Forecast alloc] init];
+            NSString *date = attributeDict[@"date"];
+            if (date != nil) {
+                self.forecast.date = date;
+            }
             break;
-            
+        }
+        case night:
+            self.forecastDate = [[ForecastDate alloc] init];
+            self.placeArray = [NSMutableArray new];
+            self.windArray = [NSMutableArray new];
+            break;
+        case day:
+            self.forecastDate = [[ForecastDate alloc] init];
+            self.placeArray = [NSMutableArray new];
+            self.windArray = [NSMutableArray new];
+            break;
+        case place:
+            self.place = [[Place alloc] init];
+            break;
+        case wind:
+            self.wind = [[Wind alloc] init];
+            break;
+        case phenomenon:
+            self.currentElement = phenomenon;
+            break;
+        case tempmin:
+            self.currentElement = tempmin;
+            break;
+        case tempmax:
+            self.currentElement = tempmax;
+            break;
+        case text:
+            self.currentElement = text;
+            break;
+        case name:
+            self.currentElement = name;
+            break;
+        case speedmin:
+            self.currentElement = speedmin;
+            break;
+        case speedmax:
+            self.currentElement = speedmax;
+            break;
+        case direction:
+            self.currentElement = direction;
+            break;
         default:
             break;
     }
