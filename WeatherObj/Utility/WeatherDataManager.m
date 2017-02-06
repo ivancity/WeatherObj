@@ -57,6 +57,11 @@ NSString *const kWind = @"wind";
     }
     return lastNumber;
 }
+
+- (void) handle:(XmlElements)xmlElement data:(NSString *)data {
+    
+}
+
 // NSXMLParserDelegate implementation
 
 - (void) parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary<NSString *,NSString *> *)attributeDict {
@@ -122,11 +127,101 @@ NSString *const kWind = @"wind";
 }
 
 - (void) parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
-    
+    if ((self.currentElement < 0) && (self.currentElement >= lastNumber)){
+        return;
+    }
+    switch (self.currentElement) {
+        case phenomenon:
+            [self handle: phenomenon data: string];
+            break;
+        case tempmin:
+            [self handle: tempmin data: string];
+            break;
+        case tempmax:
+            [self handle: tempmax data: string];
+            break;
+        case text:
+            [self handle: text data: string];
+            break;
+        case name:
+            [self handle: name data: string];
+            break;
+        case speedmin:
+            [self handle: speedmin data: string];
+            break;
+        case speedmax:
+            [self handle: speedmax data: string];
+            break;
+        case direction:
+            [self handle: direction data: string];
+            break;
+        default:
+            NSLog(@"foundCharacters not handled: ");
+    }
 }
 
 - (void) parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
-    
+    XmlElements xmlElement = [self findXmlElement:elementName];
+    switch (xmlElement) {
+        case place:
+            if (self.place) {
+                if (self.placeArray) {
+                    [self.placeArray addObject:self.place];
+                }
+            }
+            self.place = nil;
+            break;
+        case wind:
+            if (self.wind) {
+                if (self.windArray) {
+                    [self.windArray addObject:self.wind];
+                }
+            }
+            self.wind = nil;
+            break;
+        case night:
+            if (self.forecastDate) {
+                self.forecastDate.placeArray = self.placeArray;
+                self.forecastDate.windArray = self.windArray;
+            }
+            if (self.forecast) {
+                self.forecast.night = self.forecastDate;
+            }
+            self.placeArray = nil;
+            self.windArray = nil;
+            self.forecastDate = nil;
+            self.tempString = nil;
+            break;
+        case day:
+            if (self.forecastDate) {
+                self.forecastDate.placeArray = self.placeArray;
+                self.forecastDate.windArray = self.windArray;
+            }
+            if (self.forecast) {
+                self.forecast.day = self.forecastDate;
+            }
+            self.forecastDate = nil;
+            self.placeArray = nil;
+            self.windArray = nil;
+            self.tempString = nil;
+            break;
+        case forecast:
+            if (self.forecast) {
+                if (self.forecastsArray) {
+                    [self.forecastsArray addObject:self.forecast];
+                }
+            }
+            self.forecast = nil;
+            break;
+        case forecasts:
+            if (self.forecasts) {
+                self.forecasts.forecasts = self.forecastsArray;
+            }
+            self.forecastsArray = nil;
+            break;
+        default:
+            self.tempString = nil;
+    }
 }
 
 - (void) parserDidEndDocument:(NSXMLParser *)parser {
