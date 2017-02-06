@@ -58,8 +58,97 @@ NSString *const kWind = @"wind";
     return lastNumber;
 }
 
-- (void) handle:(XmlElements)xmlElement data:(NSString *)data {
+- (void) handle:(XmlElements)xmlElement data:(NSString*)data {
+    NSString *trimmedData = [data stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    if (!trimmedData.length ) {
+        //Is empty
+        return;
+    }
+    if (self.tempString != nil) {
+        self.tempString = [self.tempString stringByAppendingString:trimmedData];
+    } else {
+        self.tempString = trimmedData;
+    }
     
+    switch (xmlElement) {
+        case phenomenon:
+            if (self.place == nil) {
+                if (self.forecastDate) {
+                    self.forecastDate.phenomenon = self.tempString;
+                }
+                return;
+            }
+            self.place.phenomenon = self.tempString;
+            break;
+        case tempmin: {
+            if (self.tempString == nil) {
+                return;
+            }
+            int temp = [self.tempString intValue];
+                
+            if (self.place == nil) {
+                if(self.forecastDate != nil) {
+                    self.forecastDate.tempMin = temp;
+                }
+                return;
+            }
+            self.place.tempMin = temp;
+            break;
+        }
+        case tempmax:
+            if (self.tempString == nil) {
+                return;
+            }
+            int temp = [self.tempString intValue];
+            
+            if (self.place == nil) {
+                if(self.forecastDate != nil) {
+                    self.forecastDate.tempMax = temp;
+                }
+                return;
+            }
+            self.place.tempMax = temp;
+            break;
+        case text:
+            if (self.forecastDate) {
+                self.forecastDate.description = self.tempString;
+            }
+            break;
+        case name:
+            if (self.place) {
+                self.place.name = self.tempString;
+            }
+            if (self.wind) {
+                self.wind.name = self.tempString;
+            }
+            break;
+        case speedmin: {
+            if (self.tempString == nil) {
+                return;
+            }
+            int speed = [self.tempString intValue];
+            if (self.wind) {
+                self.wind.speedMin = speed;
+            }
+            break;
+        }
+        case speedmax:
+            if (self.tempString == nil) {
+                return;
+            }
+            int speed = [self.tempString intValue];
+            if (self.wind) {
+                self.wind.speedMax = speed;
+            }
+            break;
+        case direction:
+            if (self.wind) {
+                self.wind.direction = self.tempString;
+            }
+            break;
+        default:
+            NSLog(@"handleElementData missing: ");
+    }
 }
 
 // NSXMLParserDelegate implementation
