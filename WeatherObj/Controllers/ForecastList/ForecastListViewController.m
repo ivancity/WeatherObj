@@ -10,6 +10,8 @@
 #import "ForecastListViewController.h"
 #import "UIColorExtension.h"
 #import "Masonry.h"
+#import "FirstWeatherCell.h"
+#import "WeatherCell.h"
 
 @implementation ForecastListViewController
 
@@ -24,6 +26,8 @@
         [self.tableView setDelegate:self];
         [self.tableView setDataSource:self];
         [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleSingleLine];
+        [self.tableView registerClass:FirstWeatherCell.self forCellReuseIdentifier:@"firstCell"];
+        [self.tableView registerClass:WeatherCell.self forCellReuseIdentifier:@"cell"];
         
     }
     return self;
@@ -58,12 +62,27 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//    return [self.viewModel numberOfRows];
-    return 0;
+    return [self.viewModel numberOfRows];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return nil;
+    Forecast *forecast = [self.viewModel rowAt:indexPath];
+    if (forecast) {
+        //TODO send empty row
+        return nil;
+    }
+    TableCells cell = indexPath.row == firstCell ? firstCell : otherCell;
+    switch (cell) {
+        case firstCell: {
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"firstCell"];
+            return cell;
+        }
+        case otherCell: {
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+            return cell;
+        }
+    }
+
 }
 
 @end

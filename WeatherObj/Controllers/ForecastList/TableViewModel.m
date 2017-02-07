@@ -26,4 +26,11 @@
     return (int)self.forecasts.forecasts.count;
 }
 
+- (Forecast*)rowAt:(NSIndexPath *)indexPath {
+    if (self.forecasts == nil) {
+        return nil;
+    }
+    return self.forecasts.forecasts[indexPath.row];
+}
+
 @end

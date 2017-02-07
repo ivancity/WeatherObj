@@ -7,11 +7,8 @@
 //
 
 #import "Forecasts.h"
-
-typedef NS_ENUM(NSInteger, TableCells) {
-    firstCell,
-    otherCell
-};
+#import "Forecast.h"
+#import <UIKit/UIKit.h>
 
 @interface TableViewModel : NSObject
 
@@ -20,5 +17,6 @@ typedef NS_ENUM(NSInteger, TableCells) {
 
 - (instancetype)initWithForecasts:(Forecasts*)forecasts;
 - (int)numberOfRows;
+- (Forecast*)rowAt:(NSIndexPath*)indexPath;
 
 @end

@@ -9,6 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "TableViewModel.h"
 
+typedef NS_ENUM(NSInteger, TableCells) {
+    firstCell,
+    otherCell
+};
+
 @interface ForecastListViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) TableViewModel* viewModel;
