@@ -67,18 +67,26 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     Forecast *forecast = [self.viewModel rowAt:indexPath];
-    if (forecast) {
+    if (!forecast) {
         //TODO send empty row
         return nil;
     }
     TableCells cell = indexPath.row == firstCell ? firstCell : otherCell;
     switch (cell) {
         case firstCell: {
-            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"firstCell"];
+            FirstWeatherCell *cell = [tableView dequeueReusableCellWithIdentifier:@"firstCell"];
+            if (cell == nil) {
+                cell = [[FirstWeatherCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"firstCell"];
+            }
+            [cell set:forecast];
             return cell;
         }
         case otherCell: {
-            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+            WeatherCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+            if (cell == nil) {
+                cell = [[WeatherCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+            }
+            [cell set:forecast];
             return cell;
         }
     }

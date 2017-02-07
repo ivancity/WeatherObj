@@ -19,9 +19,9 @@
 @property (nonatomic, strong) UILabel* dayWindMinLabel;
 @property (nonatomic, strong) UILabel* dayTempDescription;
 @property (nonatomic, strong) UILabel* dayWeatherText;
+@property (nonatomic, strong) UILabel* dayIcon;
 @property (nonatomic, strong) UIView* dayTempContainer;
 @property (nonatomic, strong) UIView* dayWindContainer;
-@property (nonatomic, strong) UILabel* dayIcon;
 //night views
 @property (nonatomic, strong) UILabel* nightLabel;
 @property (nonatomic, strong) UILabel* nightTempMaxLabel;
@@ -30,9 +30,9 @@
 @property (nonatomic, strong) UILabel* nightWindMinLabel;
 @property (nonatomic, strong) UILabel* nightTempDescription;
 @property (nonatomic, strong) UILabel* nightWeatherText;
+@property (nonatomic, strong) UILabel* nightIcon;
 @property (nonatomic, strong) UIView* nightTempContainer;
 @property (nonatomic, strong) UIView* nightWindContainer;
-@property (nonatomic, strong) UILabel* nightIcon;
 //other views
 @property (nonatomic, strong) UILabel* date;
 @property (nonatomic) int margin; //= 10;

@@ -27,9 +27,9 @@
         WeatherDataManager *manager = [[WeatherDataManager alloc] initWithData:data];
         [manager start];
         Forecasts *forecasts = manager.forecasts;
-        
-        callbackCompletion(forecasts);
-        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            callbackCompletion(forecasts);
+        });
     }];
     [session resume];
 }

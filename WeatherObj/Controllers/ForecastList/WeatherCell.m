@@ -19,4 +19,8 @@
     return self;
 }
 
+-(void)set:(Forecast *)forecast {
+    
+}
+
 @end
