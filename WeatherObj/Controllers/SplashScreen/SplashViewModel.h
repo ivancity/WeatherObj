@@ -5,8 +5,11 @@
 //  Created by MC_test on 03/02/2017.
 //  Copyright © 2017 MC_test. All rights reserved.
 //
+
+#import "Forecasts.h"
+
 @protocol SplashViewModelCoordinatorDelegate <NSObject>
-- (void) fetchCompleted;
+- (void) fetchCompleted:(Forecasts *)forecasts;
 @end
 
 @protocol SplashViewModelViewDelegate <NSObject>
@@ -14,7 +17,7 @@
 @end
 
 @interface SplashViewModel : NSObject
-@property (nonatomic, weak) id<SplashViewModelCoordinatorDelegate> coordinatorDelegate;
+@property (nonatomic, strong) id<SplashViewModelCoordinatorDelegate> coordinatorDelegate;
 @property (nonatomic, weak) id<SplashViewModelViewDelegate> viewDelegate;
 
 - (void)getWeatherData;

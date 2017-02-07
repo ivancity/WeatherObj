@@ -45,6 +45,7 @@ typedef NS_ENUM(NSInteger, XmlElements) {
 @property (nonatomic, strong) NSString *tempString;
 
 - (instancetype) initWithData:(NSData*)data;
+- (void)start;
 - (NSString *) xmlElement:(XmlElements)name;
 - (XmlElements) findXmlElement:(NSString*)fromString;
 - (void) handle:(XmlElements)xmlElement data:(NSString*)data;

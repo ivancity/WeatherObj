@@ -10,7 +10,7 @@
 #import "SplashViewController.h"
 
 @protocol SplashCoordinatorCoordinatorDelegate <NSObject>
-- (void)splashCoordinatorFinished;
+- (void)splashCoordinatorFinished:(Forecasts*)withForecasts;
 @end
 
 @interface SplashCoordinator : NSObject<Coordinator, SplashViewModelCoordinatorDelegate>

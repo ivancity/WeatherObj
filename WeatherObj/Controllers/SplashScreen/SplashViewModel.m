@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "SplashViewModel.h"
+#import "WeatherRssFeedService.h"
+
 @implementation SplashViewModel
 
 - (instancetype)init {
@@ -19,7 +21,10 @@
 }
 
 - (void)getWeatherData {
-    
+    [WeatherRssFeedService getWeatherDataWithCompletion:^(Forecasts *forecasts)
+    {
+        [self.coordinatorDelegate fetchCompleted:forecasts];
+    }];
 }
 
 @end

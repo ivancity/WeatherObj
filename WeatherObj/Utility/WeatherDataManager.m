@@ -32,13 +32,17 @@ NSString *const kWind = @"wind";
         self.xmlParser = [[NSXMLParser alloc] initWithData:data];
         if (self.xmlParser) {
             self.xmlParser.delegate = self;
-            [self.xmlParser parse];
+            //[self.xmlParser parse];
         } else {
             NSLog(@"NSXMLParser error");
         }
     }
     return self;
 
+}
+
+- (void)start {
+    [self.xmlParser parse];
 }
 
 - (NSString *) xmlElement:(XmlElements)name {
@@ -111,7 +115,7 @@ NSString *const kWind = @"wind";
             break;
         case text:
             if (self.forecastDate) {
-                self.forecastDate.description = self.tempString;
+                self.forecastDate.textDescription = self.tempString;
             }
             break;
         case name:
@@ -147,7 +151,7 @@ NSString *const kWind = @"wind";
             }
             break;
         default:
-            NSLog(@"handleElementData missing: ");
+            return;
     }
 }
 
@@ -245,7 +249,7 @@ NSString *const kWind = @"wind";
             [self handle: direction data: string];
             break;
         default:
-            NSLog(@"foundCharacters not handled: ");
+            return;
     }
 }
 

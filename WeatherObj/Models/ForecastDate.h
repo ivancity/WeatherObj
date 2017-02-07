@@ -18,7 +18,7 @@
 @property (nonatomic, strong) NSString *windMaxFormatted;
 @property (nonatomic, strong) NSString *tempMinWord;
 @property (nonatomic, strong) NSString *tempMaxWord;
-@property (nonatomic, strong) NSString *description;
+@property (nonatomic, strong) NSString *textDescription;
 @property (nonatomic, strong) NSArray *placeArray;
 @property (nonatomic, strong) NSArray *windArray;
 @property (nonatomic, strong) NSString *tempPhrase;

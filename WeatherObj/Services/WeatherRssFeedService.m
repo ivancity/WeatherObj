@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "WeatherRssFeedService.h"
+#import "WeatherDataManager.h"
 
 @implementation WeatherRssFeedService
 
@@ -19,9 +20,15 @@
         if (error != nil) {
             callbackCompletion(nil);
         }
-        if (data != nil) {
+        if (data == nil) {
             return;
         }
+        //TODO process incoming data with WeatherDataManager()
+        WeatherDataManager *manager = [[WeatherDataManager alloc] initWithData:data];
+        [manager start];
+        Forecasts *forecasts = manager.forecasts;
+        
+        callbackCompletion(forecasts);
         
     }];
     [session resume];

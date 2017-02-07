@@ -26,8 +26,8 @@
     return self.splashVc;
 }
 
-- (void)fetchCompleted {
-    
+- (void)fetchCompleted:(Forecasts*)forecasts {
+    [self.coordinatorDelegate splashCoordinatorFinished:forecasts];
 }
 
 @end
