@@ -28,6 +28,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		194E94F51E49C76C00D39C75 /* NavigationControllerCoordinator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NavigationControllerCoordinator.h; path = Controllers/NavigationController/NavigationControllerCoordinator.h; sourceTree = "<group>"; };
+		194E94F61E49CB9800D39C75 /* TableViewCoordinator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TableViewCoordinator.h; path = Controllers/ForecastList/TableViewCoordinator.h; sourceTree = "<group>"; };
+		194E94F71E49CCCC00D39C75 /* TableViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TableViewModel.h; path = Controllers/ForecastList/TableViewModel.h; sourceTree = "<group>"; };
+		194E94F81E49D17F00D39C75 /* ForecastListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ForecastListViewController.h; path = Controllers/ForecastList/ForecastListViewController.h; sourceTree = "<group>"; };
 		1972350F1E43197300393D1D /* WeatherObj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherObj.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		197235131E43197300393D1D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		197235151E43197300393D1D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -173,6 +177,9 @@
 		1972352D1E43810300393D1D /* ForecastList */ = {
 			isa = PBXGroup;
 			children = (
+				194E94F61E49CB9800D39C75 /* TableViewCoordinator.h */,
+				194E94F71E49CCCC00D39C75 /* TableViewModel.h */,
+				194E94F81E49D17F00D39C75 /* ForecastListViewController.h */,
 			);
 			name = ForecastList;
 			sourceTree = "<group>";
@@ -180,6 +187,7 @@
 		1972352E1E43845200393D1D /* NavigationController */ = {
 			isa = PBXGroup;
 			children = (
+				194E94F51E49C76C00D39C75 /* NavigationControllerCoordinator.h */,
 			);
 			name = NavigationController;
 			sourceTree = "<group>";

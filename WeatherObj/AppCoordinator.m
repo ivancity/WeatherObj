@@ -26,6 +26,8 @@
     return [splashCoordinator startController];
 }
 
+// SplashCoordinatorCoordinatorDelegate implementation
+
 - (void)splashCoordinatorFinished:(Forecasts*)withForecasts {
     NSLog(@"Here");
 }
