@@ -11,6 +11,7 @@
 		194E94FC1E49D89400D39C75 /* TableViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 194E94FB1E49D89400D39C75 /* TableViewModel.m */; };
 		194E94FE1E49DA4600D39C75 /* ForecastListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 194E94FD1E49DA4600D39C75 /* ForecastListViewController.m */; };
 		194E95001E49DB1000D39C75 /* NavigationControllerCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 194E94FF1E49DB1000D39C75 /* NavigationControllerCoordinator.m */; };
+		194E95031E49E39400D39C75 /* UIColorExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 194E95021E49E39400D39C75 /* UIColorExtension.m */; };
 		197235141E43197300393D1D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 197235131E43197300393D1D /* main.m */; };
 		197235171E43197300393D1D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 197235161E43197300393D1D /* AppDelegate.m */; };
 		1972351D1E43197300393D1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1972351B1E43197300393D1D /* Main.storyboard */; };
@@ -40,6 +41,7 @@
 		194E94FB1E49D89400D39C75 /* TableViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TableViewModel.m; path = Controllers/ForecastList/TableViewModel.m; sourceTree = "<group>"; };
 		194E94FD1E49DA4600D39C75 /* ForecastListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ForecastListViewController.m; path = Controllers/ForecastList/ForecastListViewController.m; sourceTree = "<group>"; };
 		194E94FF1E49DB1000D39C75 /* NavigationControllerCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NavigationControllerCoordinator.m; path = Controllers/NavigationController/NavigationControllerCoordinator.m; sourceTree = "<group>"; };
+		194E95021E49E39400D39C75 /* UIColorExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIColorExtension.m; path = Extensions/UIColorExtension.m; sourceTree = "<group>"; };
 		1972350F1E43197300393D1D /* WeatherObj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherObj.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		197235131E43197300393D1D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		197235151E43197300393D1D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -89,6 +91,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		194E95011E49E2E800D39C75 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				194E95021E49E39400D39C75 /* UIColorExtension.m */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		197235061E43197200393D1D = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +121,7 @@
 		197235111E43197300393D1D /* WeatherObj */ = {
 			isa = PBXGroup;
 			children = (
+				194E95011E49E2E800D39C75 /* Extensions */,
 				1972352C1E4380E700393D1D /* Utility */,
 				1972352B1E4380DB00393D1D /* Services */,
 				1972352A1E4380D300393D1D /* Models */,
@@ -359,6 +370,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				197235351E44828200393D1D /* AppCoordinator.m in Sources */,
+				194E95031E49E39400D39C75 /* UIColorExtension.m in Sources */,
 				194E95001E49DB1000D39C75 /* NavigationControllerCoordinator.m in Sources */,
 				1972353E1E44B5F200393D1D /* SplashViewController.m in Sources */,
 				1972354D1E48BE0B00393D1D /* Forecast.m in Sources */,

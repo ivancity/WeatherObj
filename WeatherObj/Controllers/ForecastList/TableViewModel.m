@@ -20,7 +20,7 @@
 }
 
 - (int)numberOfRows {
-    if (self.forecasts) {
+    if (self.forecasts == nil) {
         return 0;
     }
     return (int)self.forecasts.forecasts.count;
