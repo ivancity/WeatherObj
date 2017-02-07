@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "SplashCoordinator.h"
-#import "SplashViewController.h"
 
 @implementation SplashCoordinator
 

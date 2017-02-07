@@ -13,6 +13,8 @@
 
 @property (nonatomic, strong) TableViewModel* viewModel;
 @property (nonatomic, strong) UITableView* tableView;
-@property (nonatomic, strong) CGFloat* estimatedHeight;
+@property (nonatomic) CGFloat* estimatedHeight;
+
+- (instancetype)initWithViewModel:(TableViewModel*)viewModel_;
 
 @end

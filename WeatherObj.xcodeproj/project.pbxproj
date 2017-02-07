@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		194E94FA1E49D57800D39C75 /* TableViewCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 194E94F91E49D57800D39C75 /* TableViewCoordinator.m */; };
+		194E94FC1E49D89400D39C75 /* TableViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 194E94FB1E49D89400D39C75 /* TableViewModel.m */; };
+		194E94FE1E49DA4600D39C75 /* ForecastListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 194E94FD1E49DA4600D39C75 /* ForecastListViewController.m */; };
+		194E95001E49DB1000D39C75 /* NavigationControllerCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 194E94FF1E49DB1000D39C75 /* NavigationControllerCoordinator.m */; };
 		197235141E43197300393D1D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 197235131E43197300393D1D /* main.m */; };
 		197235171E43197300393D1D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 197235161E43197300393D1D /* AppDelegate.m */; };
 		1972351D1E43197300393D1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1972351B1E43197300393D1D /* Main.storyboard */; };
@@ -32,6 +36,10 @@
 		194E94F61E49CB9800D39C75 /* TableViewCoordinator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TableViewCoordinator.h; path = Controllers/ForecastList/TableViewCoordinator.h; sourceTree = "<group>"; };
 		194E94F71E49CCCC00D39C75 /* TableViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TableViewModel.h; path = Controllers/ForecastList/TableViewModel.h; sourceTree = "<group>"; };
 		194E94F81E49D17F00D39C75 /* ForecastListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ForecastListViewController.h; path = Controllers/ForecastList/ForecastListViewController.h; sourceTree = "<group>"; };
+		194E94F91E49D57800D39C75 /* TableViewCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TableViewCoordinator.m; path = Controllers/ForecastList/TableViewCoordinator.m; sourceTree = "<group>"; };
+		194E94FB1E49D89400D39C75 /* TableViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TableViewModel.m; path = Controllers/ForecastList/TableViewModel.m; sourceTree = "<group>"; };
+		194E94FD1E49DA4600D39C75 /* ForecastListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ForecastListViewController.m; path = Controllers/ForecastList/ForecastListViewController.m; sourceTree = "<group>"; };
+		194E94FF1E49DB1000D39C75 /* NavigationControllerCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NavigationControllerCoordinator.m; path = Controllers/NavigationController/NavigationControllerCoordinator.m; sourceTree = "<group>"; };
 		1972350F1E43197300393D1D /* WeatherObj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherObj.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		197235131E43197300393D1D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		197235151E43197300393D1D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -180,6 +188,9 @@
 				194E94F61E49CB9800D39C75 /* TableViewCoordinator.h */,
 				194E94F71E49CCCC00D39C75 /* TableViewModel.h */,
 				194E94F81E49D17F00D39C75 /* ForecastListViewController.h */,
+				194E94F91E49D57800D39C75 /* TableViewCoordinator.m */,
+				194E94FB1E49D89400D39C75 /* TableViewModel.m */,
+				194E94FD1E49DA4600D39C75 /* ForecastListViewController.m */,
 			);
 			name = ForecastList;
 			sourceTree = "<group>";
@@ -188,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				194E94F51E49C76C00D39C75 /* NavigationControllerCoordinator.h */,
+				194E94FF1E49DB1000D39C75 /* NavigationControllerCoordinator.m */,
 			);
 			name = NavigationController;
 			sourceTree = "<group>";
@@ -347,16 +359,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				197235351E44828200393D1D /* AppCoordinator.m in Sources */,
+				194E95001E49DB1000D39C75 /* NavigationControllerCoordinator.m in Sources */,
 				1972353E1E44B5F200393D1D /* SplashViewController.m in Sources */,
 				1972354D1E48BE0B00393D1D /* Forecast.m in Sources */,
 				1972353B1E449A5B00393D1D /* SplashViewModel.m in Sources */,
 				197235401E48608400393D1D /* WeatherRssFeedService.m in Sources */,
 				197235491E48A17A00393D1D /* WeatherDataManager.m in Sources */,
+				194E94FA1E49D57800D39C75 /* TableViewCoordinator.m in Sources */,
 				197235381E44937C00393D1D /* SplashCoordinator.m in Sources */,
 				197235511E48BE8D00393D1D /* Wind.m in Sources */,
+				194E94FE1E49DA4600D39C75 /* ForecastListViewController.m in Sources */,
 				1972354B1E48BDC100393D1D /* Place.m in Sources */,
 				197235531E48BEC700393D1D /* Forecasts.m in Sources */,
 				1972354F1E48BE5F00393D1D /* ForecastDate.m in Sources */,
+				194E94FC1E49D89400D39C75 /* TableViewModel.m in Sources */,
 				197235171E43197300393D1D /* AppDelegate.m in Sources */,
 				197235141E43197300393D1D /* main.m in Sources */,
 			);

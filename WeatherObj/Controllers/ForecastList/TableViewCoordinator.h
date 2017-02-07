@@ -9,11 +9,10 @@
 #import "Forecasts.h"
 #import "Coordinator.h"
 #import "TableViewModel.h"
+#import "ForecastListViewController.h"
 
 @interface TableViewCoordinator : NSObject<Coordinator>
 @property (nonatomic, strong) TableViewModel* viewModel;
 @property (nonatomic, strong) ForecastListViewController* listVC;
-
 - (instancetype)initWithForecasts:(Forecasts*)forecasts;
-
 @end

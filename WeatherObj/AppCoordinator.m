@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "AppCoordinator.h"
 #import "SplashCoordinator.h"
+#import "NavigationControllerCoordinator.h"
 
 @implementation AppCoordinator
 
@@ -29,7 +30,10 @@
 // SplashCoordinatorCoordinatorDelegate implementation
 
 - (void)splashCoordinatorFinished:(Forecasts*)withForecasts {
-    NSLog(@"Here");
+    NavigationControllerCoordinator *navCoordinator = [[NavigationControllerCoordinator alloc] initWithForecasts:withForecasts];
+    self.currentCoordinator = navCoordinator;
+    self.window.rootViewController = [self.currentCoordinator startController];
+    [self.window makeKeyAndVisible];
 }
 
 

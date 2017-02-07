@@ -6,7 +6,7 @@
 //  Copyright © 2017 MC_test. All rights reserved.
 //
 
-#import "Forecasts"
+#import "Forecasts.h"
 
 typedef NS_ENUM(NSInteger, TableCells) {
     firstCell,
@@ -20,7 +20,5 @@ typedef NS_ENUM(NSInteger, TableCells) {
 
 - (instancetype)initWithForecasts:(Forecasts*)forecasts;
 - (int)numberOfRows;
-
-
 
 @end
