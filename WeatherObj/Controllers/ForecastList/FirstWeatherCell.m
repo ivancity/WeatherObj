@@ -261,8 +261,31 @@
 }
 
 -(void)set:(Forecast *)forecast {
+    if (forecast == nil) {
+        return;
+    }
     [self.date setText:forecast.date];
+    //day binding
+    if (forecast.day) {
+        [self.dayIcon setText:forecast.day.icon];
+        [self.dayTempMaxLabel setText:forecast.day.tempMaxFormatted];
+        [self.dayTempMinLabel setText:forecast.day.tempMinFormatted];
+        [self.dayWindMaxLabel setText:forecast.day.windMaxFormatted];
+        [self.dayWindMinLabel setText:forecast.day.windMinFormatted];
+        //[self.dayTempDescription setText:[forecast.day temperatureAsPhrase]];
+        [self.dayWeatherText setText:forecast.day.textDescription];
+    }
     
+    //night binding
+    if (forecast.night) {
+        [self.nightIcon setText:forecast.night.icon];
+        [self.nightTempMaxLabel setText:forecast.night.tempMaxFormatted];
+        [self.nightTempMinLabel setText:forecast.night.tempMinFormatted];
+        [self.nightWindMaxLabel setText:forecast.night.windMaxFormatted];
+        [self.nightWindMinLabel setText:forecast.night.windMinFormatted];
+        //[self.nightTempDescription setText:[forecast.night temperatureAsPhrase]];
+        [self.nightWeatherText setText:forecast.night.textDescription];
+    }
 }
 
 @end

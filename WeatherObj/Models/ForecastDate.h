@@ -23,4 +23,8 @@
 @property (nonatomic, strong) NSArray *windArray;
 @property (nonatomic, strong) NSString *tempPhrase;
 @property (nonatomic, strong) NSString *icon;
+
+- (void)setPhenomenon:(NSString*)phenomenon;
+- (void)chooseWeatherIcon:(NSString*)phenomenon;
+- (void)setTempMin:(int)tempMin;
 @end
