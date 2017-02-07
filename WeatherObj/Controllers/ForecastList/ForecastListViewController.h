@@ -9,11 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "TableViewModel.h"
 
-@interface ForecastListViewController : UIViewController
+@interface ForecastListViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) TableViewModel* viewModel;
 @property (nonatomic, strong) UITableView* tableView;
-@property (nonatomic) CGFloat* estimatedHeight;
+@property (nonatomic) CGFloat estimatedHeight;
 
 - (instancetype)initWithViewModel:(TableViewModel*)viewModel_;
 
