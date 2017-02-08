@@ -154,7 +154,6 @@
         make.top.equalTo(self.dayIcon.mas_bottom);
         make.left.equalTo(self.contentView);
         make.right.equalTo(self.dayWindContainer.mas_left);
-        //make.height.equalTo(dataHeight)
         make.height.mas_equalTo(self.dataHeight);
         make.width.equalTo(self.contentView).dividedBy(2);
     }];
@@ -162,7 +161,6 @@
         make.top.equalTo(self.dayIcon.mas_bottom);
         make.left.equalTo(self.dayTempContainer.mas_right);
         make.right.equalTo(self.contentView);
-        //make.height.equalTo(dataHeight)
         make.height.mas_equalTo(self.dataHeight);
         make.width.equalTo(self.contentView).dividedBy(2);
     }];
@@ -213,7 +211,6 @@
         make.top.equalTo(self.nightIcon.mas_bottom);
         make.left.equalTo(self.contentView);
         make.right.equalTo(self.nightWindContainer.mas_left);
-        //make.height.equalTo(dataHeight)
         make.height.mas_equalTo(self.dataHeight);
         make.width.equalTo(self.contentView).dividedBy(2);
     }];
@@ -221,7 +218,6 @@
         make.top.equalTo(self.nightIcon.mas_bottom);
         make.left.equalTo(self.nightTempContainer.mas_right);
         make.right.equalTo(self.contentView);
-        //make.height.equalTo(dataHeight)
         make.height.mas_equalTo(self.dataHeight);
         make.width.equalTo(self.contentView).dividedBy(2);
     }];
