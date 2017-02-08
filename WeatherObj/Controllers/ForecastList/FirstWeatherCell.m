@@ -272,7 +272,7 @@
         [self.dayTempMinLabel setText:forecast.day.tempMinFormatted];
         [self.dayWindMaxLabel setText:forecast.day.windMaxFormatted];
         [self.dayWindMinLabel setText:forecast.day.windMinFormatted];
-        //[self.dayTempDescription setText:[forecast.day temperatureAsPhrase]];
+        [self.dayTempDescription setText:[forecast.day temperatureAsPhrase]];
         [self.dayWeatherText setText:forecast.day.textDescription];
     }
     
@@ -283,7 +283,7 @@
         [self.nightTempMinLabel setText:forecast.night.tempMinFormatted];
         [self.nightWindMaxLabel setText:forecast.night.windMaxFormatted];
         [self.nightWindMinLabel setText:forecast.night.windMinFormatted];
-        //[self.nightTempDescription setText:[forecast.night temperatureAsPhrase]];
+        [self.nightTempDescription setText:[forecast.night temperatureAsPhrase]];
         [self.nightWeatherText setText:forecast.night.textDescription];
     }
 }

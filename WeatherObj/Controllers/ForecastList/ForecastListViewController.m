@@ -41,6 +41,13 @@
     }];
 }
 
+-(UIColor *)cellColor:(int)row {
+    if (row%2 == 0) {
+        return [UIColor deepBlue];
+    }
+    return [UIColor skyBlue];
+}
+
 //UITableViewDelegate implementation
 
 -(CGFloat) tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -79,6 +86,7 @@
                 cell = [[FirstWeatherCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"firstCell"];
             }
             [cell set:forecast];
+            [cell setBackgroundColor:[self cellColor:(int)indexPath.row]];
             return cell;
         }
         case otherCell: {
@@ -87,6 +95,7 @@
                 cell = [[WeatherCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
             }
             [cell set:forecast];
+            [cell setBackgroundColor:[self cellColor:(int)indexPath.row]];
             return cell;
         }
     }

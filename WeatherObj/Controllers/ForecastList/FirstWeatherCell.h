@@ -35,12 +35,11 @@
 @property (nonatomic, strong) UIView* nightWindContainer;
 //other views
 @property (nonatomic, strong) UILabel* date;
-@property (nonatomic) int margin; //= 10;
-@property (nonatomic) int smallMargin; // = 5;
-@property (nonatomic) int dataHeight; // = 128;
+@property (nonatomic) int margin;
+@property (nonatomic) int smallMargin;
+@property (nonatomic) int dataHeight;
 
 - (instancetype) initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier;
-
 - (void)setupViews;
 - (void)addViewStyles;
 - (void)addViewConstraints;

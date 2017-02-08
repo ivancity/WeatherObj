@@ -21,5 +21,6 @@ typedef NS_ENUM(NSInteger, TableCells) {
 @property (nonatomic) CGFloat estimatedHeight;
 
 - (instancetype)initWithViewModel:(TableViewModel*)viewModel_;
+- (UIColor*)cellColor:(int)row;
 
 @end
