@@ -7,7 +7,8 @@
 //
 #import "Forecasts.h"
 #import "Forecast.h"
-#import <Foundation/Foundation.h>
+#import "Place.h"
+#import <UIKit/UIKit.h>
 
 @interface DetailViewModel : NSObject
 
@@ -16,6 +17,6 @@
 
 - (instancetype)initWithForecasts:(Forecasts*)forecasts;
 - (int)numberOfRows;
-- (Forecast*)rowAt:(NSIndexPath*)indexPath;
+- (NSArray*)rowAt:(NSIndexPath*)indexPath;
 
 @end

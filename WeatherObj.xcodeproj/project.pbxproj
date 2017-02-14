@@ -15,6 +15,8 @@
 		194E95081E4A0AF400D39C75 /* FirstWeatherCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 194E95071E4A0AF400D39C75 /* FirstWeatherCell.m */; };
 		194E950B1E4A10DB00D39C75 /* WeatherCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 194E950A1E4A10DB00D39C75 /* WeatherCell.m */; };
 		19663D011E5382D200489A2A /* DetailListCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 19663D001E5382D200489A2A /* DetailListCoordinator.m */; };
+		19663D051E53888D00489A2A /* DetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 19663D041E53888D00489A2A /* DetailViewModel.m */; };
+		19663D071E538D4B00489A2A /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19663D061E538D4B00489A2A /* DetailViewController.m */; };
 		197235141E43197300393D1D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 197235131E43197300393D1D /* main.m */; };
 		197235171E43197300393D1D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 197235161E43197300393D1D /* AppDelegate.m */; };
 		1972351D1E43197300393D1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1972351B1E43197300393D1D /* Main.storyboard */; };
@@ -54,6 +56,8 @@
 		19663D001E5382D200489A2A /* DetailListCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailListCoordinator.m; path = Controllers/DetailList/DetailListCoordinator.m; sourceTree = "<group>"; };
 		19663D021E53849A00489A2A /* DetailViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DetailViewModel.h; path = Controllers/DetailList/DetailViewModel.h; sourceTree = "<group>"; };
 		19663D031E53854500489A2A /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DetailViewController.h; path = Controllers/DetailList/DetailViewController.h; sourceTree = "<group>"; };
+		19663D041E53888D00489A2A /* DetailViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailViewModel.m; path = Controllers/DetailList/DetailViewModel.m; sourceTree = "<group>"; };
+		19663D061E538D4B00489A2A /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailViewController.m; path = Controllers/DetailList/DetailViewController.m; sourceTree = "<group>"; };
 		1972350F1E43197300393D1D /* WeatherObj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherObj.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		197235131E43197300393D1D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		197235151E43197300393D1D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -119,6 +123,8 @@
 				19663D001E5382D200489A2A /* DetailListCoordinator.m */,
 				19663D021E53849A00489A2A /* DetailViewModel.h */,
 				19663D031E53854500489A2A /* DetailViewController.h */,
+				19663D041E53888D00489A2A /* DetailViewModel.m */,
+				19663D061E538D4B00489A2A /* DetailViewController.m */,
 			);
 			name = DetailsList;
 			sourceTree = "<group>";
@@ -400,6 +406,7 @@
 			files = (
 				197235351E44828200393D1D /* AppCoordinator.m in Sources */,
 				19663D011E5382D200489A2A /* DetailListCoordinator.m in Sources */,
+				19663D071E538D4B00489A2A /* DetailViewController.m in Sources */,
 				194E95031E49E39400D39C75 /* UIColorExtension.m in Sources */,
 				194E95001E49DB1000D39C75 /* NavigationControllerCoordinator.m in Sources */,
 				1972353E1E44B5F200393D1D /* SplashViewController.m in Sources */,
@@ -413,6 +420,7 @@
 				197235511E48BE8D00393D1D /* Wind.m in Sources */,
 				194E950B1E4A10DB00D39C75 /* WeatherCell.m in Sources */,
 				194E94FE1E49DA4600D39C75 /* ForecastListViewController.m in Sources */,
+				19663D051E53888D00489A2A /* DetailViewModel.m in Sources */,
 				1972354B1E48BDC100393D1D /* Place.m in Sources */,
 				197235531E48BEC700393D1D /* Forecasts.m in Sources */,
 				1972354F1E48BE5F00393D1D /* ForecastDate.m in Sources */,

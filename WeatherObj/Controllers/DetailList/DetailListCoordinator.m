@@ -15,7 +15,8 @@
 - (instancetype)initWithForecasts:(Forecasts *)forecasts {
     self = [super init];
     if (self) {
-        
+        self.viewModel = [[DetailViewModel alloc] initWithForecasts:forecasts];
+        self.listVC = [[DetailViewController alloc] initWithViewModel:self.viewModel];
     }
     return self;
 }

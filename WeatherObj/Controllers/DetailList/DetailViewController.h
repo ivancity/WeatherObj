@@ -16,6 +16,5 @@
 @property (nonatomic) CGFloat estimatedHeight;
 
 - (instancetype)initWithViewModel:(DetailViewModel*)viewModel_;
-- (UIColor*)cellColor:(int)row;
 
 @end
