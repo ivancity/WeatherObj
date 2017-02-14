@@ -21,7 +21,8 @@
         self.dayMaxValues = [[UILabel alloc] init];
         self.dayMinValues = [[UILabel alloc] init];
         self.dayTempDescription = [[UILabel alloc] init];
-        self.dayIcon = [[UILabel alloc] init];
+        self.dayIcon = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 10, 10)];
+        self.dayIcon.contentMode = UIViewContentModeScaleAspectFill;
         self.dayWeatherText = [[UILabel alloc] init];
         //night views
         self.nightLabel = [[UILabel alloc] init];
@@ -29,7 +30,7 @@
         self.nightMinValues = [[UILabel alloc] init];
         self.nightTempDescription = [[UILabel alloc] init];
         self.nightWeatherText = [[UILabel alloc] init];
-        self.nightIcon = [[UILabel alloc] init];
+        self.nightIcon = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 60, 60)];
         //other views
         self.date = [[UILabel alloc] init];
         self.margin = 10;
@@ -91,7 +92,6 @@
 
 -(void)dayViewStyles {
     [self.dayLabel setFont:[UIFont systemFontOfSize: 18]];
-    [self.dayIcon setFont:[UIFont systemFontOfSize: 48]];
     
     [self.dayMaxValues setFont:[UIFont boldSystemFontOfSize: 24]];
     [self.dayMaxValues setTextColor:[UIColor whiteColor]];
@@ -109,7 +109,7 @@
 
 -(void)nightViewStyles {
     [self.nightLabel setFont:[UIFont systemFontOfSize: 18]];
-    [self.nightIcon setFont:[UIFont systemFontOfSize: 48]];
+    
     
     [self.nightMaxValues setFont:[UIFont boldSystemFontOfSize: 24]];
     [self.nightMaxValues setTextColor:[UIColor whiteColor]];
@@ -197,8 +197,7 @@
     if (forecast.day) {
         NSString *maxValues = [NSString stringWithFormat:@"%@  %@    %@",@"Max ",forecast.day.tempMaxFormatted,forecast.day.windMaxFormatted];
         NSString *minValues = [NSString stringWithFormat:@"%@  %@    %@",@"Min ",forecast.day.tempMinFormatted,forecast.day.windMinFormatted];
-        
-        [self.dayIcon setText:forecast.day.icon];
+        self.dayIcon.image = [self findImage:forecast.day.icon];
         [self.dayMaxValues setText:maxValues];
         [self.dayMinValues setText:minValues];
         [self.dayTempDescription setText:[forecast.day temperatureAsPhrase]];
@@ -207,17 +206,60 @@
     
     //night binding
     if (forecast.night) {
-        
         NSString *maxValues = [NSString stringWithFormat:@"%@  %@    %@",@"Max ",forecast.night.tempMaxFormatted,forecast.night.windMaxFormatted];
         NSString *minValues = [NSString stringWithFormat:@"%@  %@    %@",@"Min ",forecast.night.tempMinFormatted,forecast.night.windMinFormatted];
-        
-        
-        [self.nightIcon setText:forecast.night.icon];
+        self.nightIcon.image = [self findImage:forecast.night.icon];
         [self.nightMaxValues setText:maxValues];
         [self.nightMinValues setText:minValues];
         [self.nightTempDescription setText:[forecast.night temperatureAsPhrase]];
         [self.nightWeatherText setText:forecast.night.textDescription];
     }
+}
+
+-(UIImage*)findImage:(WeatherElements)element {
+    CGSize size = CGSizeMake(120, 120);
+    switch (element) {
+        case cloud: {
+            UIImage *temp = [UIImage imageNamed:@"cloud"];
+            return [self resizeImage:temp imageSize:size];
+        }
+        case sun: {
+            UIImage *temp = [UIImage imageNamed:@"sun"];
+            return [self resizeImage:temp imageSize:size];
+        }
+        case rain: {
+            UIImage *temp = [UIImage imageNamed:@"rain"];
+            return [self resizeImage:temp imageSize:size];
+        }
+        case snow:{
+            UIImage *temp = [UIImage imageNamed:@"snow"];
+            return [self resizeImage:temp imageSize:size];
+        }
+        case sleet:{
+            UIImage *temp = [UIImage imageNamed:@"sleet"];
+            return [self resizeImage:temp imageSize:size];
+        }
+        case mist:{
+            UIImage *temp = [UIImage imageNamed:@"mist"];
+            return [self resizeImage:temp imageSize:size];
+        }
+        case glaze:{
+            UIImage *temp = [UIImage imageNamed:@"glaze"];
+            return [self resizeImage:temp imageSize:size];
+        }
+        case rainbow:{
+            UIImage *temp = [UIImage imageNamed:@"rainbow"];
+            return [self resizeImage:temp imageSize:size];
+        }
+    }
+}
+
+-(UIImage *)resizeImage:(UIImage *)image imageSize:(CGSize)size {
+    UIGraphicsBeginImageContext(size);
+    [image drawInRect:CGRectMake(0,0,size.width,size.height)];
+    UIImage* newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return newImage;
 }
 
 @end

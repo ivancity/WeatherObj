@@ -13,25 +13,30 @@
     _phenomenon = phenomenon;
     if (phenomenon.length) {
         //not empty
-        [self chooseWeatherIcon:phenomenon];
+        
+        [self chooseWeatherIcon:[phenomenon lowercaseString]];
     } else {
-        self.icon = nil;
+        self.icon = rainbow;
     }
 }
 
 - (void)chooseWeatherIcon:(NSString *)phenomenon {
     if ([phenomenon containsString:@"cloud"]) {
-        self.icon = @"☁️";
+        self.icon = cloud;
     } else if ([phenomenon containsString:@"sun"]) {
-        self.icon = @"🌝";
+        self.icon = sun;
     } else if ([phenomenon containsString:@"rain"]) {
-        self.icon = @"🌧";
+        self.icon = rain;
     } else if ([phenomenon containsString:@"snow"]) {
-        self.icon = @"☃️";
+        self.icon = snow;
     } else if ([phenomenon containsString:@"sleet"]) {
-        self.icon = @"🌨";
+        self.icon = sleet;
+    } else if ([phenomenon containsString:@"mist"]) {
+        self.icon = mist;
+    } else if ([phenomenon containsString:@"glaze"]) {
+        self.icon = glaze;
     } else {
-        self.icon = @"🌈";
+        self.icon = rainbow;
     }
 }
 

@@ -17,14 +17,14 @@
 @property (nonatomic, strong) UILabel* dayMinValues;
 @property (nonatomic, strong) UILabel* dayTempDescription;
 @property (nonatomic, strong) UILabel* dayWeatherText;
-@property (nonatomic, strong) UILabel* dayIcon;
+@property (nonatomic, strong) UIImageView* dayIcon;
 //night views
 @property (nonatomic, strong) UILabel* nightLabel;
 @property (nonatomic, strong) UILabel* nightMaxValues;
 @property (nonatomic, strong) UILabel* nightMinValues;
 @property (nonatomic, strong) UILabel* nightTempDescription;
 @property (nonatomic, strong) UILabel* nightWeatherText;
-@property (nonatomic, strong) UILabel* nightIcon;
+@property (nonatomic, strong) UIImageView* nightIcon;
 //other views
 @property (nonatomic, strong) UILabel* date;
 @property (nonatomic) int margin;
@@ -42,5 +42,6 @@
 - (void)dayViewConstraints;
 - (void)nightViewConstraints;
 - (void)set:(Forecast*)forecast;
-
+- (UIImage*)findImage:(WeatherElements)element;
+-(UIImage *)resizeImage:(UIImage *)image imageSize:(CGSize)size;
 @end
