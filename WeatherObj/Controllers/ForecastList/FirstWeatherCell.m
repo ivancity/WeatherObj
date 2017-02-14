@@ -264,8 +264,12 @@
     //day binding
     if (forecast.day) {
         [self.dayIcon setText:forecast.day.icon];
-        [self.dayTempMaxLabel setText:forecast.day.tempMaxFormatted];
-        [self.dayTempMinLabel setText:forecast.day.tempMinFormatted];
+        [self.dayTempMaxLabel setText:
+         [@"Max " stringByAppendingString:forecast.day.tempMaxFormatted]
+        ];
+        [self.dayTempMinLabel setText:
+         [@"Min " stringByAppendingString:forecast.day.tempMinFormatted]
+        ];
         [self.dayWindMaxLabel setText:forecast.day.windMaxFormatted];
         [self.dayWindMinLabel setText:forecast.day.windMinFormatted];
         [self.dayTempDescription setText:[forecast.day temperatureAsPhrase]];
@@ -275,8 +279,12 @@
     //night binding
     if (forecast.night) {
         [self.nightIcon setText:forecast.night.icon];
-        [self.nightTempMaxLabel setText:forecast.night.tempMaxFormatted];
-        [self.nightTempMinLabel setText:forecast.night.tempMinFormatted];
+        [self.nightTempMaxLabel setText:
+         [@"Max " stringByAppendingString:forecast.night.tempMaxFormatted]
+        ];
+        [self.nightTempMinLabel setText:
+         [@"Min " stringByAppendingString:forecast.night.tempMinFormatted]
+        ];
         [self.nightWindMaxLabel setText:forecast.night.windMaxFormatted];
         [self.nightWindMinLabel setText:forecast.night.windMinFormatted];
         [self.nightTempDescription setText:[forecast.night temperatureAsPhrase]];

@@ -53,31 +53,20 @@
 }
 
 -(NSString *)tempMinFormatted {
-    if (self.tempMin) {
-        return [NSString stringWithFormat:@"%d ˚C", self.tempMin];
-    }
-    return @"N/A";
+    return [NSString stringWithFormat:@"%d ˚C", self.tempMin];
 }
 
 -(NSString *)tempMaxFormatted {
-    if (self.tempMax) {
-        return [NSString stringWithFormat:@"%d ˚C", self.tempMax];
-    }
-    return @"N/A";
+    return [NSString stringWithFormat:@"%d ˚C", self.tempMax];
 }
 
 -(NSString *)windMinFormatted {
-    if (self.windMin) {
-        return [NSString stringWithFormat:@"%d m/s", self.windMin];
-    }
-    return @"N/A";
+    return [NSString stringWithFormat:@"%d m/s", self.windMin];
 }
 
 -(NSString *)windMaxFormatted {
-    if (self.windMax) {
-        return [NSString stringWithFormat:@"%d m/s", self.windMax];
-    }
-    return @"N/A";
+    return [NSString stringWithFormat:@"%d m/s", self.windMax];
+    
 }
 
 -(void)setWindArray:(NSArray *)windArray {

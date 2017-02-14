@@ -162,8 +162,12 @@
 -(void)set:(Forecast *)forecast {
     [self.date setText:forecast.date];
     if (forecast.day) {
-        [self.dayTempMaxLabel setText:forecast.day.tempMaxFormatted];
-        [self.dayTempMinLabel setText:forecast.day.tempMinFormatted];
+        [self.dayTempMaxLabel setText:
+         [@"Max Temp.   " stringByAppendingString: forecast.day.tempMaxFormatted]
+        ];
+        [self.dayTempMinLabel setText:
+         [@"Min Temp.   " stringByAppendingString: forecast.day.tempMinFormatted]
+        ];
     }
     if (forecast.night) {
         [self.nightTempMaxLabel setText:forecast.night.tempMaxFormatted];
