@@ -14,6 +14,7 @@
 		194E95031E49E39400D39C75 /* UIColorExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 194E95021E49E39400D39C75 /* UIColorExtension.m */; };
 		194E95081E4A0AF400D39C75 /* FirstWeatherCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 194E95071E4A0AF400D39C75 /* FirstWeatherCell.m */; };
 		194E950B1E4A10DB00D39C75 /* WeatherCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 194E950A1E4A10DB00D39C75 /* WeatherCell.m */; };
+		19663D011E5382D200489A2A /* DetailListCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 19663D001E5382D200489A2A /* DetailListCoordinator.m */; };
 		197235141E43197300393D1D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 197235131E43197300393D1D /* main.m */; };
 		197235171E43197300393D1D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 197235161E43197300393D1D /* AppDelegate.m */; };
 		1972351D1E43197300393D1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1972351B1E43197300393D1D /* Main.storyboard */; };
@@ -49,6 +50,10 @@
 		194E95071E4A0AF400D39C75 /* FirstWeatherCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FirstWeatherCell.m; path = Controllers/ForecastList/FirstWeatherCell.m; sourceTree = "<group>"; };
 		194E95091E4A10B000D39C75 /* WeatherCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = WeatherCell.h; path = Controllers/ForecastList/WeatherCell.h; sourceTree = "<group>"; };
 		194E950A1E4A10DB00D39C75 /* WeatherCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WeatherCell.m; path = Controllers/ForecastList/WeatherCell.m; sourceTree = "<group>"; };
+		19663CFF1E5381A700489A2A /* DetailListCoordinator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DetailListCoordinator.h; path = Controllers/DetailList/DetailListCoordinator.h; sourceTree = "<group>"; };
+		19663D001E5382D200489A2A /* DetailListCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailListCoordinator.m; path = Controllers/DetailList/DetailListCoordinator.m; sourceTree = "<group>"; };
+		19663D021E53849A00489A2A /* DetailViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DetailViewModel.h; path = Controllers/DetailList/DetailViewModel.h; sourceTree = "<group>"; };
+		19663D031E53854500489A2A /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DetailViewController.h; path = Controllers/DetailList/DetailViewController.h; sourceTree = "<group>"; };
 		1972350F1E43197300393D1D /* WeatherObj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherObj.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		197235131E43197300393D1D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		197235151E43197300393D1D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -107,6 +112,17 @@
 			name = Extensions;
 			sourceTree = "<group>";
 		};
+		19663CFE1E53810D00489A2A /* DetailsList */ = {
+			isa = PBXGroup;
+			children = (
+				19663CFF1E5381A700489A2A /* DetailListCoordinator.h */,
+				19663D001E5382D200489A2A /* DetailListCoordinator.m */,
+				19663D021E53849A00489A2A /* DetailViewModel.h */,
+				19663D031E53854500489A2A /* DetailViewController.h */,
+			);
+			name = DetailsList;
+			sourceTree = "<group>";
+		};
 		197235061E43197200393D1D = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +175,7 @@
 		197235291E43809A00393D1D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				19663CFE1E53810D00489A2A /* DetailsList */,
 				1972352F1E43845E00393D1D /* SplashScreen */,
 				1972352E1E43845200393D1D /* NavigationController */,
 				1972352D1E43810300393D1D /* ForecastList */,
@@ -382,6 +399,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				197235351E44828200393D1D /* AppCoordinator.m in Sources */,
+				19663D011E5382D200489A2A /* DetailListCoordinator.m in Sources */,
 				194E95031E49E39400D39C75 /* UIColorExtension.m in Sources */,
 				194E95001E49DB1000D39C75 /* NavigationControllerCoordinator.m in Sources */,
 				1972353E1E44B5F200393D1D /* SplashViewController.m in Sources */,
