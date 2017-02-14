@@ -11,14 +11,10 @@
 
 //day views
 @property (nonatomic, strong) UILabel *dayLabel;
-@property (nonatomic, strong) UILabel *dayTempMaxTitle;
-@property (nonatomic, strong) UILabel *dayTempMinTitle;
 @property (nonatomic, strong) UILabel *dayTempMaxLabel;
 @property (nonatomic, strong) UILabel *dayTempMinLabel;
 //night views
 @property (nonatomic, strong) UILabel *nightLabel;
-@property (nonatomic, strong) UILabel *nightTempMaxTitle;
-@property (nonatomic, strong) UILabel *nightTempMinTitle;
 @property (nonatomic, strong) UILabel *nightTempMaxLabel;
 @property (nonatomic, strong) UILabel *nightTempMinLabel;
 //other views

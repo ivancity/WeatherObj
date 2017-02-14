@@ -23,14 +23,10 @@
         self.dayLabel = [[UILabel alloc] init];
         self.dayTempMaxLabel = [[UILabel alloc] init];
         self.dayTempMinLabel = [[UILabel alloc] init];
-        self.dayTempMaxTitle = [[UILabel alloc] init];
-        self.dayTempMinTitle = [[UILabel alloc] init];
         //night views
         self.nightLabel = [[UILabel alloc] init];
         self.nightTempMaxLabel = [[UILabel alloc] init];
         self.nightTempMinLabel = [[UILabel alloc] init];
-        self.nightTempMaxTitle = [[UILabel alloc] init];
-        self.nightTempMinTitle = [[UILabel alloc] init];
         
         [self setupViews];
         [self addViewConstraints];
@@ -63,50 +59,38 @@
 
 -(void)setupDayViews {
     [self.dayLabel setText:@"Day"];
-    [self.dayTempMaxTitle setText:@"Max Temp."];
-    [self.dayTempMinTitle setText:@"Min Temp."];
     [self.contentView addSubview:self.dayLabel];
-    [self.contentView addSubview:self.dayTempMaxTitle];
-    [self.contentView addSubview:self.dayTempMinTitle];
     [self.contentView addSubview:self.dayTempMaxLabel];
     [self.contentView addSubview:self.dayTempMinLabel];
 }
 
 -(void)setupNightViews {
     [self.nightLabel setText:@"Night"];
-    [self.nightTempMaxTitle setText:@"Max Temp."];
-    [self.nightTempMinTitle setText:@"Min Temp."];
     [self.contentView addSubview:self.nightLabel];
-    [self.contentView addSubview:self.nightTempMaxTitle];
-    [self.contentView addSubview:self.nightTempMinTitle];
     [self.contentView addSubview:self.nightTempMaxLabel];
     [self.contentView addSubview:self.nightTempMinLabel];
 }
 
 -(void)dayViewStyles {
     [self.dayLabel setFont:[UIFont systemFontOfSize: 18]];
-    [self.dayTempMaxTitle setFont:[UIFont boldSystemFontOfSize: 16]];
-    [self.dayTempMinTitle setFont:[UIFont boldSystemFontOfSize: 16]];
     [self.dayTempMaxLabel setFont:[UIFont systemFontOfSize: 18]];
     [self.dayTempMinLabel setFont:[UIFont systemFontOfSize: 18]];
+    self.dayTempMaxLabel.textAlignment = NSTextAlignmentJustified;
+    self.dayTempMinLabel.textAlignment = NSTextAlignmentJustified;
     
     [self.dayLabel setTextColor:[UIColor whiteTwo]];
-    [self.dayTempMaxTitle setTextColor:[UIColor whiteThree]];
-    [self.dayTempMinTitle setTextColor:[UIColor whiteThree]];
     [self.dayTempMaxLabel setTextColor:[UIColor whiteColor]];
     [self.dayTempMinLabel setTextColor:[UIColor whiteColor]];
 }
 
 -(void)nightViewStyles {
     [self.nightLabel setFont:[UIFont systemFontOfSize: 18]];
-    [self.nightTempMaxTitle setFont:[UIFont boldSystemFontOfSize: 16]];
-    [self.nightTempMinTitle setFont:[UIFont boldSystemFontOfSize: 16]];
     [self.nightTempMaxLabel setFont:[UIFont systemFontOfSize: 18]];
     [self.nightTempMinLabel setFont:[UIFont systemFontOfSize: 18]];
+    self.nightTempMaxLabel.textAlignment = NSTextAlignmentJustified;
+    self.nightTempMinLabel.textAlignment = NSTextAlignmentJustified;
     
     [self.nightLabel setTextColor:[UIColor whiteTwo]];
-    [self.nightTempMaxTitle setTextColor:[UIColor whiteThree]];
-    [self.nightTempMinTitle setTextColor:[UIColor whiteThree]];
     [self.nightTempMaxLabel setTextColor:[UIColor whiteColor]];
     [self.nightTempMinLabel setTextColor:[UIColor whiteColor]];
 }
@@ -116,45 +100,28 @@
         make.top.equalTo(self.date.mas_bottom).offset(self.smallMargin);
         make.centerX.equalTo(self.contentView);
     }];
-    [self.dayTempMaxTitle mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.dayLabel.mas_bottom).offset(self.smallMargin);
-        make.left.equalTo(self.contentView).offset(self.margin * 4);
-    }];
-    [self.dayTempMinTitle mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.dayTempMaxTitle.mas_bottom).offset(self.smallMargin);
-        make.left.equalTo(self.contentView).offset(self.margin * 4);
-    }];
     [self.dayTempMaxLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.dayLabel.mas_bottom).offset(self.smallMargin);
-        make.right.equalTo(self.contentView).offset(-self.margin * 4);
+        make.centerX.equalTo(self.contentView);
     }];
     [self.dayTempMinLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.dayTempMaxLabel.mas_bottom).offset(self.smallMargin);
-        make.right.equalTo(self.contentView).offset(-self.margin * 4);
+        make.centerX.equalTo(self.contentView);
     }];
-
 }
 
 -(void)nightViewConstraints {
     [self.nightLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.dayTempMinTitle.mas_bottom).offset(self.smallMargin);
+        make.top.equalTo(self.dayTempMinLabel.mas_bottom).offset(self.smallMargin);
         make.centerX.equalTo(self.contentView);
-    }];
-    [self.nightTempMaxTitle mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.nightLabel.mas_bottom).offset(self.smallMargin);
-        make.left.equalTo(self.contentView).offset(self.margin * 4);
-    }];
-    [self.nightTempMinTitle mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.nightTempMaxTitle.mas_bottom).offset(self.smallMargin);
-        make.left.equalTo(self.contentView).offset(self.margin * 4);
     }];
     [self.nightTempMaxLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.nightLabel.mas_bottom).offset(self.smallMargin);
-        make.right.equalTo(self.contentView).offset(-self.margin * 4);
+        make.centerX.equalTo(self.contentView);
     }];
     [self.nightTempMinLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.nightTempMaxLabel.mas_bottom).offset(self.smallMargin);
-        make.right.equalTo(self.contentView).offset(-self.margin * 4);
+        make.centerX.equalTo(self.contentView);
         make.bottom.equalTo(self.contentView).offset(-self.margin);
     }];
 }
@@ -163,15 +130,19 @@
     [self.date setText:forecast.date];
     if (forecast.day) {
         [self.dayTempMaxLabel setText:
-         [@"Max Temp.   " stringByAppendingString: forecast.day.tempMaxFormatted]
+         [@"Max Temp.     " stringByAppendingString: forecast.day.tempMaxFormatted]
         ];
         [self.dayTempMinLabel setText:
-         [@"Min Temp.   " stringByAppendingString: forecast.day.tempMinFormatted]
+         [@"Min  Temp.    " stringByAppendingString: forecast.day.tempMinFormatted]
         ];
     }
     if (forecast.night) {
-        [self.nightTempMaxLabel setText:forecast.night.tempMaxFormatted];
-        [self.nightTempMinLabel setText:forecast.night.tempMinFormatted];
+        [self.nightTempMaxLabel setText:
+         [@"Max Temp.     " stringByAppendingString: forecast.night.tempMaxFormatted]
+         ];
+        [self.nightTempMinLabel setText:
+         [@"Min  Temp.    " stringByAppendingString: forecast.night.tempMinFormatted]
+         ];
     }
 }
 

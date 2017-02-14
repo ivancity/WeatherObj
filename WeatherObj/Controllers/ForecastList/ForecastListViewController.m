@@ -59,7 +59,7 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    NSLog(@"%d", (int)indexPath.row);
 }
 
 //UITableViewDataSource implementation
@@ -86,6 +86,7 @@
                 cell = [[FirstWeatherCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"firstCell"];
             }
             [cell set:forecast];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
             [cell setBackgroundColor:[self cellColor:(int)indexPath.row]];
             return cell;
         }
@@ -95,6 +96,7 @@
                 cell = [[WeatherCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
             }
             [cell set:forecast];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
             [cell setBackgroundColor:[self cellColor:(int)indexPath.row]];
             return cell;
         }

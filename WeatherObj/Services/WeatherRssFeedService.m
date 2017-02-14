@@ -21,7 +21,7 @@
             callbackCompletion(nil);
         }
         if (data == nil) {
-            return;
+            callbackCompletion(nil);
         }
         //TODO process incoming data with WeatherDataManager()
         WeatherDataManager *manager = [[WeatherDataManager alloc] initWithData:data];
