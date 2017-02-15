@@ -18,12 +18,19 @@
     if (self) {
         self.viewModel = [[TableViewModel alloc] initWithForecasts:forecasts];
         self.listVC = [[ForecastListViewController alloc] initWithViewModel: self.viewModel];
+        self.viewModel.coordinatorDelegate = self;
     }
     return self;
 }
 
 - (UIViewController *)startController {
     return self.listVC;
+}
+
+//TableViewModelCoordinatorDelegate implementation
+
+-(void)openDetailView {
+    [self.coordinatorDelegate openDetailView];
 }
 
 @end

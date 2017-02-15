@@ -27,7 +27,6 @@
         self.nightLabel = [[UILabel alloc] init];
         self.nightTempMaxLabel = [[UILabel alloc] init];
         self.nightTempMinLabel = [[UILabel alloc] init];
-        
         [self setupViews];
         [self addViewConstraints];
         [self addViewStyles];

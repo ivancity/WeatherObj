@@ -16,6 +16,9 @@
     if (self) {
         self.forecasts = forecasts;
         self.tableViewCoordinator = [[TableViewCoordinator alloc] initWithForecasts:forecasts];
+        self.detailViewCoordinator = [[DetailListCoordinator alloc] initWithForecasts:forecasts];
+        self.tableViewCoordinator.coordinatorDelegate = self;
+        
     }
     return self;
 }
@@ -24,6 +27,14 @@
     UIViewController *forecastListVC = [self.tableViewCoordinator startController];
     self.navController = [[UINavigationController alloc] initWithRootViewController:forecastListVC];
     return self.navController;
+}
+
+//TableViewCoordinatorCoordinatorDelegate implementation
+
+-(void)openDetailView {
+    UIViewController *detailVC = [self.detailViewCoordinator startController];
+    [self.navController pushViewController:detailVC
+                                  animated:YES];
 }
 
 @end

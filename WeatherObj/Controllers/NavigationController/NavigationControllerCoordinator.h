@@ -7,8 +7,10 @@
 //
 #import "Coordinator.h"
 #import "TableViewCoordinator.h"
-@interface NavigationControllerCoordinator : NSObject<Coordinator>
+#import "DetailListCoordinator.h"
+@interface NavigationControllerCoordinator : NSObject<Coordinator, TableViewCoordinatorCoordinatorDelegate>
 @property (nonatomic, strong) TableViewCoordinator* tableViewCoordinator;
+@property (nonatomic, strong) DetailListCoordinator* detailViewCoordinator;
 @property (nonatomic, strong) Forecasts* forecasts;
 @property (nonatomic, strong) UINavigationController* navController;
 

@@ -31,9 +31,12 @@
     if (self.forecast == nil) {
         return nil;
     }
+    
+    Place *place = self.forecast.day.placeArray[indexPath.row];
+    Place *night = self.forecast.night.placeArray[indexPath.row];
     NSArray *result = [[NSArray alloc] init];
-    [result arrayByAddingObject:self.forecast.day.placeArray[indexPath.row]];
-    [result arrayByAddingObject:self.forecast.night.placeArray[indexPath.row]];
+    result = [result arrayByAddingObject:place];
+    result = [result arrayByAddingObject:night];
     return result;
 }
 

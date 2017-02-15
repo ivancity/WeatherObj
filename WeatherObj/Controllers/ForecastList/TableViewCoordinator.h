@@ -11,7 +11,12 @@
 #import "TableViewModel.h"
 #import "ForecastListViewController.h"
 
-@interface TableViewCoordinator : NSObject<Coordinator>
+@protocol TableViewCoordinatorCoordinatorDelegate <NSObject>
+- (void)openDetailView;
+@end
+
+@interface TableViewCoordinator : NSObject<Coordinator, TableViewModelCoordinatorDelegate>
+@property (nonatomic, weak) id<TableViewCoordinatorCoordinatorDelegate> coordinatorDelegate;
 @property (nonatomic, strong) TableViewModel* viewModel;
 @property (nonatomic, strong) ForecastListViewController* listVC;
 - (instancetype)initWithForecasts:(Forecasts*)forecasts;

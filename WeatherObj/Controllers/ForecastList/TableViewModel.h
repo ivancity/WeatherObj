@@ -10,13 +10,19 @@
 #import "Forecast.h"
 #import <UIKit/UIKit.h>
 
+@protocol TableViewModelCoordinatorDelegate <NSObject>
+- (void)openDetailView;
+@end
+
 @interface TableViewModel : NSObject
 
+@property (nonatomic, weak) id<TableViewModelCoordinatorDelegate> coordinatorDelegate;
 @property (nonatomic, strong) Forecasts* forecasts;
 @property (nonatomic) int numberOfSections;
 
 - (instancetype)initWithForecasts:(Forecasts*)forecasts;
 - (int)numberOfRows;
 - (Forecast*)rowAt:(NSIndexPath*)indexPath;
+- (void)selectFirstRow;
 
 @end

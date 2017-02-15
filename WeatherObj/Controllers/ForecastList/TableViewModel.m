@@ -33,4 +33,8 @@
     return self.forecasts.forecasts[indexPath.row];
 }
 
+-(void)selectFirstRow {
+    [self.coordinatorDelegate openDetailView];
+}
+
 @end

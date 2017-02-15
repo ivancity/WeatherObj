@@ -60,6 +60,9 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"%d", (int)indexPath.row);
+    if (indexPath.row == 0) {
+        [self.viewModel selectFirstRow];
+    }
 }
 
 //UITableViewDataSource implementation

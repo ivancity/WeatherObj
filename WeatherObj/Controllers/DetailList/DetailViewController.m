@@ -10,6 +10,7 @@
 #import "DetailViewController.h"
 #import "UIColorExtension.h"
 #import "Masonry.h"
+#import "DetailCell.h"
 
 @implementation DetailViewController
 
@@ -20,10 +21,12 @@
         self.viewModel = viewModel_;
         self.title = @"Details";
         self.tableView = [[UITableView alloc] init];
-        [self.tableView setBackgroundColor:[UIColor skyBlue]];
+        [self.tableView setBackgroundColor:[UIColor deepBlue]];
         [self.tableView setDelegate:self];
         [self.tableView setDataSource:self];
         [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleSingleLine];
+        [self.tableView registerClass:DetailCell.self
+               forCellReuseIdentifier:@"detailCell"];
     }
     return self;
 }
@@ -46,9 +49,6 @@
     self.estimatedHeight = cell.frame.size.height;
 }
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"%d", (int)indexPath.row);
-}
 
 //UITableViewDataSource implementation
 
@@ -63,10 +63,22 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSArray *dayNight = [self.viewModel rowAt:indexPath];
     if (!dayNight) {
-        //TODO send empty row
-        return nil;
+        DetailCell *cell = [[DetailCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"detailCell"];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        return cell;
     }
-    return nil;
+    Place *day = [dayNight objectAtIndex:0];
+    Place *night = [dayNight objectAtIndex:1];
+    DetailCell *cell =
+    [tableView dequeueReusableCellWithIdentifier:@"detailCell"];
+    
+    if(cell == nil) {
+        cell = [[DetailCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"detailCell"];
+    }
+    [cell set:day and:night];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    [cell setBackgroundColor:[UIColor deepBlue]];
+    return cell;
 }
 
 @end
